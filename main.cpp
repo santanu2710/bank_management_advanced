@@ -36,6 +36,11 @@ void invalid_input_handle()
     cout << "sorry invalid input try again: ";
 }
 
+void next_line_adder()
+{
+    cout << endl << "=========================================================" << endl << endl;
+}
+
 
 // main function
 int main()
@@ -43,11 +48,13 @@ int main()
     // Initialize a vector of accounts (data structure) named bank
     vector<account> bank;
 
-    // pushing an
-    bank.push_back(account("admin", 123456, "admin", 0));
+    // pushing an admin account in the 0th position of the array
+    bank.push_back(account("admin", 000000, "admin", 0));
 
 
     int user_type_selector;
+    int id_input;
+    string pass_input;
 
     // asking about user type according to diffrent user type there will be diffrent funcionalities
     cout << "Welcome, plese choose which type of user you are" << endl;
@@ -68,7 +75,44 @@ int main()
         // taking input again
         cin >> user_type_selector;
     }
+
+
+
+
+
+    if (user_type_selector == 1)
+    {
+        cout << "please enter your id and password" << endl;
+        cout << "id: ";
+        cin >> id_input;
+        cout << "password: ";
+        cin >> pass_input;
+
+        while (id_input != 000000 || pass_input != "admin")
+        {
+            invalid_input_handle(); cout << endl;
+            cout << "id: ";
+            cin >> id_input;
+            cout << "password: ";
+            cin >> pass_input;
+        }
+        
+        next_line_adder();
+
+        cout << "As you select Admin option you can do following operations on all the accounts :" << endl;
+        cout << "Add account" << endl;
+        cout << "Delete account" << endl;
+        cout << "Change password" << endl;
+        cout << "Diposit" << endl;
+        cout << "Withdraw" << endl;
+        cout << "Viwe account statement" << endl;
     
+    }
+    
+    
+    
+
+
     
 
     return 0;
