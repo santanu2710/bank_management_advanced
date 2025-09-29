@@ -106,6 +106,7 @@ int main()
         cout << "Diposit" << endl;
         cout << "Withdraw" << endl;
         cout << "Viwe account statement" << endl;
+        //how is it
     
     }
     
